@@ -1,0 +1,36 @@
+.c-box {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #e2e2e2;
+    margin-top: 100px;
+  }
+  #text {
+    width: 65%;
+    display: block;
+    border: none;
+    border-radius: 0;
+    outline: none;
+  }
+  .go {
+    display: block;
+    width: 5%;
+    border-radius: 0;
+    border: 1px solid #e2e2e2;
+    border-top: none;
+    border-bottom: none;
+  }
+  #qrImage {
+    object-fit: contain;
+    width: 30%;
+    margin: 0 auto;
+    display: block;
+    border-radius: 0;
+  }
+  #qrFrame {
+    display: block;
+    border: 1px solid #e2e2e2;
+    width: 500px;
+    height: 700px;
+    margin: 0 auto;
+  }
+  

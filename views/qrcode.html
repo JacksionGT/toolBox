@@ -1,0 +1,13 @@
+{% extends 'layout.html' %} {% block title %}
+  二维码生成
+{% endblock %} {% block head %}
+  <link rel="stylesheet" href="/css/qrcode.css" />
+{% endblock %} {% block content %}
+  <div class="c-box">
+    <textarea name="" id="text" cols="30" rows="10" placeholder="请输入需要转二维码的文本信息"></textarea>
+    <button class="go">GO</button>
+    <img alt="二维码" id="qrImage" />
+  </div>
+  <script src="js/lib/jquery.js"></script>
+  <script src="js/qrcode.js"></script>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'layout.html' %} {% block title %} {{ title }} {% endblock %} {%block head %}
+<link rel="stylesheet" href="/css/index.css" />
+<script>
+  console.log('--------------index loaded-------------------');
+</script>
+{% endblock %} {% block content %}
+<main>
+  <div class="list">
+    <div class="tool">
+      <div>🍑</div>
+      <a target="_blank" href="/qrcode">二维码生成</a>
+    </div>
+  </div>
+</main>
+{% endblock %}
