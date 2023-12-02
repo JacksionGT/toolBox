@@ -1,41 +1,47 @@
 main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 80vh;
-  }
-  .tool {
-    margin: 20px;
-  }
-  .list {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .tool {
-    width: 200px;
-    height: 200px;
-    text-align: center;
-    border-radius: 6px;
-    border: 1px solid #e1e1e1;
-    box-shadow: 0 0 0 #ccc;
-    transition: all 0.2s linear;
-  }
-  .tool:hover {
-    border-radius: 2px;
-    box-shadow: 0 0 10px #ccc;
-    cursor: pointer;
-  }
-  .tool div {
-    line-height: 150px;
-    font-size: 100px;
-  }
-  .tool a {
-    display: block;
-    line-height: 50px;
-    font-size: 20px;
-    background: #e0e0e0;
-    text-decoration: none;
-    color: #333333;
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+.tool {
+  margin: 20px;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tool {
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  border-radius: 6px;
+  border: 1px solid #e1e1e1;
+  box-shadow: 0 0 0 #ccc;
+  transition: all 0.2s linear;
+  transform: translateX(0) translateY(0);
+}
+
+.tool:hover {
+  box-shadow: 0 0 20px #e7e7e7;
+  transform: translateX(-2px) translateY(-2px);
+}
+
+.tool div {
+  line-height: 150px;
+  font-size: 100px;
+  cursor: default;
+}
+
+.tool a {
+  display: block;
+  line-height: 50px;
+  font-size: 20px;
+  background: #e0e0e0;
+  text-decoration: none;
+  color: #333333;
+}

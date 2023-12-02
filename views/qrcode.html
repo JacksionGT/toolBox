@@ -3,11 +3,18 @@
 {% endblock %} {% block head %}
   <link rel="stylesheet" href="/css/qrcode.css" />
 {% endblock %} {% block content %}
+
+<div class="container w100">
   <div class="c-box">
     <textarea name="" id="text" cols="30" rows="10" placeholder="请输入需要转二维码的文本信息"></textarea>
     <button class="go">GO</button>
     <img alt="二维码" id="qrImage" />
   </div>
-  <script src="js/lib/jquery.js"></script>
+  <div class="help">
+    <span id="hepl"></span>
+  </div>
+</div>
+  <script src="https://cdn.bootcdn.net/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
+  <script src="https://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
   <script src="js/qrcode.js"></script>
 {% endblock %}

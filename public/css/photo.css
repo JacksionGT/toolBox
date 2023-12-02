@@ -1,0 +1,71 @@
+#viewer {
+    width: 100vw;
+    height: calc(100vh - 75px);
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.container-photo {
+    width: 400px;
+    height: 160px;
+    padding: 15px;
+    margin: 20px auto 0;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.dashboard {
+    width: 300px;
+    height: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: 2px dashed rgb(236, 236, 236);
+    border-radius: 5px;
+}
+
+.dashboard #intro,
+#notSupport {
+    color: rgb(206, 206, 206);
+    display: block;
+    text-align: center;
+    line-height: 150px;
+    font-size: 20px;
+}
+
+#notSupport {
+    display: none;
+}
+
+[draggable] {
+    /*防止可拖曳元素的文字被选中*/
+    -webkit-user-select: none;
+    user-select: none;
+    /*可以拖曳的元素通常鼠标是十字形*/
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+.change {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #0000004d;
+    padding: 3px;
+    text-align: center;
+    border-radius: 0 0 3px 0;
+    color: #ffffff;
+}

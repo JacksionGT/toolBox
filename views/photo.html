@@ -1,0 +1,32 @@
+{% extends 'layout.html' %} {% block title %}
+全景图浏览器
+{% endblock %} {% block head %}
+<link rel="stylesheet" href="/css/photo.css" />
+<link rel="stylesheet" href="/js/lib/photo-sphere-viewer/index.min.css" />
+
+<script type="text/javascript" src="/js/lib/jquery/jquery.min.js"></script>
+<script src="/js/lib/three/three.min.js"></script>
+<script src="/js/lib/browser.min.js"></script>
+<script src="/js/lib/photo-sphere-viewer/index.min.js"></script>
+
+<link rel="manifest" href="photo-manifest.json" />
+{% endblock %} {% block content %}
+
+<div id="viewer"></div>
+
+<div id="intro">
+    <h1>360全景图在线浏览查看器</h1>
+    <label class="container-photo" for="file">
+        <div id="dashboard" class="dashboard">
+            <div id="intro">拖拽全景图到此展示</div>
+            <div id="notSupport">未选择/不支持此文件</div>
+        </div>
+    </label>
+</div>
+
+<div class="change">
+    <label for="file">CH</label>
+    <input type="file" class="hide" id="file" accept="image/*" />
+</div>
+<script src="/js/photo.js"></script>
+{% endblock %}

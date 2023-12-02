@@ -41,6 +41,10 @@ app.get('/qrcode', (req, res) => {
     res.render('qrcode', { title: '二维码生成' });
 })
 
+app.get('/photo', (req, res) => {
+    res.render('photo', { title: '全景图片浏览器' });
+})
+
 app.listen(port, () => {
     console.log(`start: ${port}`)
 }) 

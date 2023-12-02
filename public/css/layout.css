@@ -1,22 +1,50 @@
-:root{
-    --main-width: 1024px;
-  }
-  .box {
-    min-height: 100vh;
-    font-family: 'Alibaba-PuHuiTi-L';
-  }
-  .top {
-    border-bottom: 1px solid #e1e1e1;
-    box-shadow: 0 0 10px #c8c8c8;
-  }
-  .nav {
-    width: var(--main-width);
-    font-size: 16px;
-    margin: 0 auto;
-    line-height: 50px;
-  }
-  .main{
-    width: var(--main-width);
-    margin: 0 auto;
-  }
-  
+:root {
+  --main-width: 1024px;
+}
+
+.box {
+  min-height: 100vh;
+  margin: 0 auto;
+  font-family: -apple-system, "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+}
+
+.w100{
+  width: 100%;
+}
+
+.container{
+  max-width: var(--main-width);
+  margin: 0 auto;
+}
+
+.top {
+  border-bottom: 1px solid #e1e1e1;
+  box-shadow: 0 0 10px #c8c8c8;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.logo {
+  font-size: 30px;
+  line-height: 50px;
+  text-decoration: none;
+  color: #333333;
+  cursor: pointer;
+}
+
+
+.desc {
+  line-height: 40px;
+  font-size: 16px;
+}
+
+.bottom {
+  text-align: center;
+}
+.bottom a{
+  text-decoration: none;
+  color: #2e96ff;
+}
