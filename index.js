@@ -8,13 +8,25 @@ const config = require('./config');
 const app = express();
 const { port } = config;
 
-// 利用express.static中间件来托管静态资源。
-app.use(express.static(path.join(__dirname, 'public'), {
-  headers: {
-    'Access-Control-Allow-Origin': '*',
-    'Cache-Control': 'max-age=604800' // 缓存一周，单位为秒
+// 自定义静态资源中间件，覆盖默认的 express.static
+const customStaticMiddleware = (staticPath, options) => {
+  return (req, res, next) => {
+    express.static(staticPath, options)(req, res, err => {
+      if (err) return next(err);
+      res.status(200); // 总是返回状态码 200 OK
+      next();
+    });
+  };
+};
+
+// 使用自定义的静态资源中间件，并添加自定义头部信息
+app.use(customStaticMiddleware(path.join(__dirname, 'public'), {
+  setHeaders: (res, filePath) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Cache-Control', 'max-age=604800'); // 缓存一周，单位为秒
   }
 }));
+
 app.use(cors())
 
 // ----------------- 模板引擎 -------------------------
