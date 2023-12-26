@@ -2,13 +2,23 @@
 
     // const frame = document.querySelector('#qrFrame');
     const queryButton = document.querySelector('.go');
+    const resetButton = document.querySelector('.reset');
     const qrText = document.querySelector('#text');
     const qrImage = document.querySelector('#qrImage');
-    const helpText = document.querySelector("#hepl");
+    const helpText = document.querySelector("#help");
+    
 
     let lastText = '';
 
     queryButton.addEventListener('click', qrCode, false);
+    resetButton.addEventListener('click', reset, false);
+
+    function reset() {
+        helpText.innerHTML = '';
+        qrText.value = '';
+        qrImage.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAgABH9bvFgAAAABJRU5ErkJggg==';
+        qrText.focus();
+    }
 
     function qrCode() {
         const text = qrText.value;
@@ -40,7 +50,6 @@
                 if (ret.status == 1) {
                     var new_qrimg = ret.qrimg;
                     $(qrImage).attr('src', new_qrimg);
-                    qrText.value = '';
                     helpText.innerHTML = `二维码已生成 - ${moment().format('YYYY-MM-DD HH:mm:ss')}`;
                 }
             },
@@ -48,8 +57,5 @@
                 console.log(e);
             },
         });
-    }
-    window.onload = function(){
-        genQrImage('http://www.mohexiang.cn/')
     }
 })()

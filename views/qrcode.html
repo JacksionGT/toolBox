@@ -1,20 +1,50 @@
-{% extends 'layout.html' %} {% block title %}
+{% extends 'layout.html' %}
+{% block title %}
   二维码生成
-{% endblock %} {% block head %}
-  <link rel="stylesheet" href="/css/qrcode.css" />
-{% endblock %} {% block content %}
-
-<div class="container w100">
-  <div class="c-box">
-    <textarea name="" id="text" cols="30" rows="10" placeholder="请输入需要转二维码的文本信息"></textarea>
-    <button class="go">GO</button>
-    <img alt="二维码" id="qrImage" />
-  </div>
-  <div class="help">
-    <span id="hepl"></span>
-  </div>
-</div>
-  <script src="https://cdn.bootcdn.net/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
-  <script src="https://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
-  <script src="js/qrcode.js"></script>
+{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="css/qrcode2.css">
+{% endblock %}
+{% block content %}
+<main class="p-4 w-full box max-w-2xl mx-auto">
+    <div class="mx-auto space-y-6">
+        <div class="space-y-2 text-center">
+            <h1 class="text-3xl font-bold">
+                二维码生成
+            </h1>
+            <p class="text-gray-500 dark:text-gray-400">
+                输入需要转二维码的文本信息，然后点击生成
+            </p>
+            <p class="text-gray-500 dark:text-gray-400">
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
+                <textarea class="outline-none w-full p-1 h-36" id="text" placeholder="输入文本"></textarea>
+            </div>
+            <div>
+                <button
+                    class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-slate-950 text-slate-50 hover:bg-slate-800 active:bg-blue-900 active:translate-x-px active:translate-y-px h-10 px-4 py-2 w-20 mt-1 ml-auto go"
+                    type="submit">
+                    生成
+                </button>
+                <button
+                    class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-slate-950 text-slate-50 hover:bg-slate-800 active:bg-blue-900 active:translate-x-px active:translate-y-px h-10 px-4 py-2 w-20 mt-1 ml-5 reset"
+                    type="submit">
+                    重置
+                </button>
+                <div id="help" class="mt-4 text-red-700 text-xs"></div>
+            </div>
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
+                <div class="flex flex-col space-y-1.5 p-6">
+                    <p class="text-sm text-muted-foreground">
+                        生成结果
+                    </p>
+                </div>
+                <div class="p-6 flex justify-center items-center"><img alt="QR code" height="200" width="200" id="qrImage" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAgABH9bvFgAAAABJRU5ErkJggg==" style="aspect-ratio: 200 / 200; object-fit: cover;"></div>
+            </div>
+            </p>
+        </div>
+    </div>
+</main>
+<script src="https://cdn.bootcdn.net/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
+<script src="https://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+<script src="js/qrcode2.js"></script>
 {% endblock %}

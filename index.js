@@ -49,15 +49,38 @@ swig.setDefaults({ cache: false });
 //从文件载入模板，请写绝对路径，不要使用相对路径
 swig.setDefaults({ loader: swig.loaders.fs(__dirname + '/views') });
 
+const routeConfig = [
+  {
+    path: '/',
+    view: 'index',
+    title: '首页'
+  },
+  {
+    path: '/qrcode',
+    view: 'qrcode',
+    title: '二维码'
+  },
+  {
+    path: '/photo',
+    view: 'photo',
+    title: '全景图片浏览器'
+  }
+]
+
+for (let i = 0; i < routeConfig.length; i++) {
+  app.get(routeConfig[i].path, (req, res) => {
+    res.render(routeConfig[i].view, { title: routeConfig[i].title });
+  })
+}
 
 app.get('/', (req, res) => {
     res.render('index', { title: '首页' });
 })
 
-app.get('/qrcode', (req, res) => {
-    res.render('qrcode', { title: '二维码生成' });
-})
 
+app.get('/qrcode', (req, res) => {
+  res.render('qrcode', { title: '二维码生成' });
+})
 app.get('/photo', (req, res) => {
     res.render('photo', { title: '全景图片浏览器' });
 })
