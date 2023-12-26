@@ -9,7 +9,12 @@ const app = express();
 const { port } = config;
 
 // 利用express.static中间件来托管静态资源。
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'), {
+  headers: {
+    'Access-Control-Allow-Origin': '*',
+    'Cache-Control': 'max-age=604800' // 缓存一周，单位为秒
+  }
+}));
 app.use(cors())
 
 // ----------------- 模板引擎 -------------------------
